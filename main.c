@@ -164,7 +164,7 @@ static void myGXFlush(void) {
 		while (i <= sdState.partition->openFileCount && i <= 2) {
 			char fileopen[30];
 			strcpy(fileopen, GHOST_FOLDER);
-			if (i == 1) strcpy(fileopen+sizeof(GHOST_FOLDER)-1, i == 1 ? "/ghost1.rkg" : "/ghost2.rkg");
+			strcpy(fileopen+sizeof(GHOST_FOLDER)-1, i == 1 ? "/ghost1.rkg" : "/ghost2.rkg");
 			FILE_STRUCT fs;
 			fd = SD_open(&fs, fileopen, O_RDONLY);
 			if (fd == -1) {
